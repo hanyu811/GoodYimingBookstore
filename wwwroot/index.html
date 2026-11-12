@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>登录 - 好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="login-bg">
+  <div class="login-container">
+    <div class="login-shell">
+      <aside class="login-side">
+        <p class="login-kicker">HAOYIMING BOOKSTORE</p>
+        <h2>好一鸣书店</h2>
+        <p>让阅读，在此刻发生。</p>
+      </aside>
+
+      <section class="login-box">
+        <div class="login-brand-row">
+          <h1>欢迎登录</h1>
+          <span class="login-badge">线上书城</span>
+        </div>
+        <p>请选择身份并输入账号信息</p>
+
+        <div class="form-grid login-form-grid">
+          <div class="form-group full-width">
+            <label>登录身份</label>
+            <select id="role" class="form-control">
+              <option value="reader" selected>买书读者</option>
+              <option value="seller">商家</option>
+              <option value="admin">平台管理员</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>用户名</label>
+            <input id="username" type="text" class="form-control" placeholder="请输入用户名" value="reader1" />
+          </div>
+
+          <div class="form-group">
+            <label>密码</label>
+            <input id="password" type="password" class="form-control" placeholder="请输入密码" value="123456" />
+          </div>
+        </div>
+
+        <p id="message" class="error-msg"></p>
+
+        <button id="loginBtn" class="nav-btn btn-block">进入系统</button>
+
+        <div class="login-divider"><span>没有读者账号？</span></div>
+        <div class="login-register-entry">
+          <span>前往独立注册页创建读者账号</span>
+          <a href="/register.html" class="nav-btn login-register-link">注册账号</a>
+        </div>
+
+        <div class="login-footer">
+          <p>体验账号：reader1~reader4 / seller1~seller4 / admin~admin4，密码均为 123456</p>
+          <p>读者注册入口已独立到新页面，注册成功后可返回本页登录。</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/login.js"></script>
+</body>
+</html>

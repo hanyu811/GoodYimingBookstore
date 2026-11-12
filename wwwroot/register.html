@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>注册读者账号 - 好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="login-bg">
+  <div class="login-container">
+    <div class="login-shell">
+      <aside class="login-side">
+        <p class="login-kicker">HAOYIMING BOOKSTORE</p>
+        <h2>好一鸣书店</h2>
+        <p>让阅读，在此刻发生。</p>
+      </aside>
+
+      <section class="login-box">
+        <div class="login-brand-row">
+          <h1>读者注册</h1>
+          <span class="login-badge">新账号开通</span>
+        </div>
+        <p>填写账号信息后即可创建读者账号。</p>
+
+        <div class="form-grid login-register-grid">
+          <div class="form-group">
+            <label>读者用户名</label>
+            <input id="registerUserName" type="text" class="form-control" placeholder="请输入新用户名" />
+          </div>
+
+          <div class="form-group">
+            <label>读者显示名</label>
+            <input id="registerDisplayName" type="text" class="form-control" placeholder="如：书友小安（可选）" />
+          </div>
+
+          <div class="form-group">
+            <label>注册密码</label>
+            <input id="registerPassword" type="password" class="form-control" placeholder="至少 6 位" />
+          </div>
+
+          <div class="form-group">
+            <label>确认密码</label>
+            <input id="registerConfirmPassword" type="password" class="form-control" placeholder="请再次输入密码" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>默认收货地址（可选）</label>
+            <input id="registerAddress" type="text" class="form-control" placeholder="例如：杭州市西湖区文三路 88 号" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>默认联系电话（可选）</label>
+            <input id="registerPhoneNumber" type="text" class="form-control" placeholder="例如：13800000000" />
+          </div>
+        </div>
+
+        <p id="registerMessage" class="error-msg"></p>
+        <button id="registerBtn" class="nav-btn btn-block login-register-btn">注册为读者</button>
+
+        <div class="login-register-entry">
+          <span>已有账号？</span>
+          <a href="/" class="nav-btn login-register-link">返回登录</a>
+        </div>
+
+        <div class="login-footer">
+          <p>注册成功后会自动同步到管理员账号治理列表。</p>
+          <p>收货地址与联系电话可在下单时再次修改并保存。</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/register.js"></script>
+</body>
+</html>

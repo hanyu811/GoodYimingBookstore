@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>商家中心 - 好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">好一鸣书店</div>
+    <div class="navbar-nav">
+      <span id="userChip" class="user-chip">商家中心</span>
+      <a href="#" class="nav-link active">商品中心</a>
+      <a href="/seller-orders.html" class="nav-link">订单中心</a>
+      <a href="/swagger" target="_blank" class="nav-link">API 开放平台</a>
+      <button id="logoutBtn" class="nav-btn" style="background:#49534f;">退出登录</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="page-head">
+      <h2>商家商品运营中心</h2>
+      <p>统一完成图书新增、编辑、库存维护与删除操作，数据实时同步到平台前台。</p>
+    </section>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">在售图书</div>
+        <div class="stat-value" id="statTotalBooks">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">在售库存</div>
+        <div class="stat-value" id="statTotalStock">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">低库存图书</div>
+        <div class="stat-value" id="statLowStock">0</div>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-header">
+        <h2>📦 新增 / 编辑图书</h2>
+      </div>
+      <input type="hidden" id="bookId" />
+      <div class="form-grid">
+        <div class="form-group">
+          <label>书名</label>
+          <input id="title" type="text" class="form-control" placeholder="如：三体" />
+        </div>
+        <div class="form-group">
+          <label>作者</label>
+          <input id="author" type="text" class="form-control" placeholder="如：刘慈欣" />
+        </div>
+        <div class="form-group">
+          <label>分类</label>
+          <input id="category" type="text" class="form-control" placeholder="如：科幻 / 文学" />
+        </div>
+        <div class="form-group">
+          <label>价格 (元)</label>
+          <input id="price" type="number" step="0.01" min="0" inputmode="decimal" class="form-control" placeholder="99.00" />
+        </div>
+        <div class="form-group">
+          <label>库存 (本)</label>
+          <input id="stock" type="number" step="1" min="0" class="form-control" placeholder="100" />
+        </div>
+        <div class="form-group full-width">
+          <label>封面图片 URL</label>
+          <input id="imageUrl" type="text" class="form-control" placeholder="https://picsum.photos/seed/book/320/420" />
+        </div>
+        <div class="form-group full-width">
+          <label>内容简介 (选填)</label>
+          <textarea id="description" class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <p id="message" class="info-msg"></p>
+      <div style="margin-top:20px; display:flex; gap:10px;">
+        <button id="saveBtn" class="nav-btn">💾 保存图书</button>
+        <button id="resetBtn" class="nav-btn" style="background: #8a8f89;">↺ 清空表单</button>
+      </div>
+    </div>
+
+    <div class="admin-header">
+      <h2>📚 当前在售图书</h2>
+      <button class="nav-btn" onclick="loadBooks()" style="background:#4f7c68;">↻ 刷新列表</button>
+    </div>
+    <div class="admin-table-container seller-books-table-wrap">
+      <table class="admin-table seller-books-table">
+        <colgroup>
+          <col class="col-book-cover" />
+          <col class="col-book-title" />
+          <col class="col-book-author" />
+          <col class="col-book-category" />
+          <col class="col-book-price" />
+          <col class="col-book-stock" />
+          <col class="col-book-actions" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>封面</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>分类</th>
+            <th>价格</th>
+            <th>库存</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="sellerBookList"></tbody>
+      </table>
+    </div>
+    <div id="sellerBooksPagination" class="pagination panel-pagination"></div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 好一鸣书店 - 商家运营子系统</p>
+  </footer>
+
+  <script src="/seller.js"></script>
+</body>
+</html>

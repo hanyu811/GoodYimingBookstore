@@ -1,0 +1,27 @@
+# 构建输出
+bin/
+obj/
+temp_build/
+out/
+publish/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# 编译产物
+*.dll
+*.exe
+*.pdb
+*.cache
+*.deps.json
+*.runtimeconfig.json
+
+# 其他
+*.log
+.DS_Store
+Thumbs.db

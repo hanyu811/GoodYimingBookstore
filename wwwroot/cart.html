@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>我的购物车 - 好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">好一鸣书店</div>
+    <div class="navbar-nav">
+      <span id="userChip" class="user-chip">读者中心</span>
+      <a href="/store.html" class="nav-link">书城首页</a>
+      <a href="#" class="nav-link active">我的购物车</a>
+      <a href="/orders.html" class="nav-link">我的订单</a>
+      <button id="logoutBtn" class="nav-btn" style="background:#49534f;">退出登录</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="page-head">
+      <h2>购物车结算中心</h2>
+      <p>你可以在此调整数量、删除商品，并完成下单结算。</p>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card soft">
+        <div class="stat-label">购物车商品行数</div>
+        <div class="stat-value" id="cartItemCount">0</div>
+      </div>
+      <div class="stat-card soft">
+        <div class="stat-label">不同图书种类</div>
+        <div class="stat-value" id="cartBookTypeCount">0</div>
+      </div>
+      <div class="stat-card soft">
+        <div class="stat-label">当前合计金额</div>
+        <div class="stat-value" id="cartTotalStat">0.00</div>
+      </div>
+    </section>
+
+    <div class="admin-header">
+      <h2>🛍️ 购物车商品</h2>
+      <button id="refreshCartBtn" class="nav-btn" style="background:#4f7c68;">↻ 刷新购物车</button>
+    </div>
+
+    <div class="admin-table-container">
+      <table class="admin-table cart-table">
+        <thead>
+          <tr>
+            <th>图书</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th width="120">操作</th>
+          </tr>
+        </thead>
+        <tbody id="cartList"></tbody>
+      </table>
+    </div>
+
+    <section class="admin-panel cart-checkout-panel">
+      <h3>收货信息</h3>
+      <div class="form-grid checkout-shipping-grid">
+        <div class="form-group full-width">
+          <label>收货地址 <span class="required-mark">*</span></label>
+          <input id="shippingAddress" type="text" class="form-control" placeholder="请输入详细收货地址" />
+        </div>
+
+        <div class="form-group">
+          <label>联系电话 <span class="required-mark">*</span></label>
+          <input id="shippingPhone" type="text" class="form-control" placeholder="请输入联系电话" />
+        </div>
+      </div>
+
+      <div class="cart-checkout-row">
+        <strong id="cartTotalText">合计：¥0.00</strong>
+        <button id="checkoutBtn" class="nav-btn">💳 结算下单</button>
+      </div>
+    </section>
+    <p id="cartMessage" class="info-msg"></p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 好一鸣书店 - 读者购物车子系统</p>
+  </footer>
+
+  <script src="/cart.js"></script>
+</body>
+</html>

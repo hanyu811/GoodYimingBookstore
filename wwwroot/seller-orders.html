@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>商家订单中心 - 好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">好一鸣书店</div>
+    <div class="navbar-nav">
+      <span id="userChip" class="user-chip">商家中心</span>
+      <a href="/seller.html" class="nav-link">图书管理</a>
+      <a href="#" class="nav-link active">订单中心</a>
+      <a href="/swagger" target="_blank" class="nav-link">API 开放平台</a>
+      <button id="logoutBtn" class="nav-btn" style="background:#49534f;">退出登录</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="page-head">
+      <h2>商家订单中心</h2>
+      <p>查看读者订单详情、收货信息，并可执行发货操作。</p>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card soft">
+        <div class="stat-label">订单总量</div>
+        <div class="stat-value" id="sellerOrderCount">0</div>
+      </div>
+      <div class="stat-card soft">
+        <div class="stat-label">累计成交金额</div>
+        <div class="stat-value" id="sellerOrderAmount">0.00</div>
+      </div>
+      <div class="stat-card soft">
+        <div class="stat-label">待发货订单</div>
+        <div class="stat-value" id="sellerUnshippedOrderCount">0</div>
+      </div>
+    </section>
+
+    <div class="admin-header">
+      <h2>🧾 读者订单列表</h2>
+      <button class="nav-btn" onclick="loadOrders()" style="background:#4f7c68;">↻ 刷新订单</button>
+    </div>
+    <div class="admin-table-container seller-orders-table-wrap">
+      <table class="admin-table seller-orders-table">
+        <colgroup>
+          <col class="col-order-id" />
+          <col class="col-order-date" />
+          <col class="col-order-buyer" />
+          <col class="col-order-address" />
+          <col class="col-order-phone" />
+          <col class="col-order-items" />
+          <col class="col-order-amount" />
+          <col class="col-order-status" />
+          <col class="col-order-actions" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>订单号</th>
+            <th>下单时间</th>
+            <th>买家</th>
+            <th>收货地址</th>
+            <th>联系电话</th>
+            <th>明细</th>
+            <th>金额</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="sellerOrderList"></tbody>
+      </table>
+    </div>
+    <div id="sellerOrdersPagination" class="pagination panel-pagination"></div>
+    <p id="message" class="info-msg"></p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 好一鸣书店 - 商家订单子系统</p>
+  </footer>
+
+  <script src="/seller-orders.js"></script>
+</body>
+</html>

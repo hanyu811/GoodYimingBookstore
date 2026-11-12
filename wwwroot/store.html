@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>好一鸣书店</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">好一鸣书店</div>
+    <div class="navbar-nav">
+      <span id="userChip" class="user-chip">读者中心</span>
+      <a href="#" class="nav-link active">书城首页</a>
+      <a href="/cart.html" class="nav-link">我的购物车</a>
+      <a href="/orders.html" class="nav-link">我的订单</a>
+      <a href="/swagger" target="_blank" class="nav-link">API 开放平台</a>
+      <button id="logoutBtn" class="nav-btn" style="background:#49534f;">退出登录</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="toolbar">
+      <input id="keyword" type="text" class="form-control" placeholder="搜索书名或作者..." />
+      <button id="searchBtn" class="nav-btn">🔍 检索图书</button>
+    </div>
+
+    <p id="storeMessage" class="info-msg"></p>
+
+    <div id="bookList" class="book-grid four-col">
+      <!-- Books injected here -->
+    </div>
+
+    <div id="pagination" class="pagination"></div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 好一鸣书店 - 专业网络书店演示平台</p>
+  </footer>
+
+  <div id="buyModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-card">
+      <h3 id="modalTitle" style="color:var(--primary); margin-bottom:8px;"></h3>
+      <p id="modalAuthor" style="color:var(--text-muted); margin-bottom:10px;"></p>
+      <p id="modalDesc" style="margin-bottom:16px; line-height:1.7;"></p>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px;">
+        <span id="modalPrice" style="font-size:22px; color:var(--accent); font-weight:700;"></span>
+        <span id="modalStock" style="color:var(--text-muted);"></span>
+      </div>
+      <div class="form-group buy-qty-wrap" style="margin-bottom:16px;">
+        <label for="modalQty">购买数量</label>
+        <div class="qty-control qty-control-right qty-control-center">
+          <input id="modalQty" type="text" class="form-control qty-input" readonly aria-label="购买数量" />
+          <div class="qty-stepper">
+            <button id="modalQtyPlusBtn" type="button" class="qty-btn qty-side-btn">+</button>
+            <button id="modalQtyMinusBtn" type="button" class="qty-btn qty-side-btn">-</button>
+          </div>
+        </div>
+      </div>
+      <p id="modalMessage" class="info-msg" style="min-height:20px;"></p>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button id="modalCancelBtn" class="nav-btn" style="background:#8a8f89;">取消</button>
+        <button id="modalConfirmBtn" class="nav-btn">加入购物车</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/store.js?v=20260415-1"></script>
+</body>
+</html>
